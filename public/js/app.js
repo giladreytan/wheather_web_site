@@ -14,14 +14,14 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?address=' + location).then((response) => {
         console.log('searching...')
         response.json().then((data) => {
-            
+                        
             if (data.error){
                 console.log(data.error + 'data error')
                 messageOne.textContent = data.error
             }
             else
             {
-                messageOne.textContent = 'temp in ' + location + ' is: ' + data.temp + ' with ' + data.percipation + '% chance of rain'
+                messageOne.textContent = 'Today weather in ' + location + ' is ' + data.summary + ' current temp is ' + data.temp + ' degrees. there is a ' + data.percipation + '% chance of rain'
                 console.log(data.location, data.temp, data.percipation)
             }
         })

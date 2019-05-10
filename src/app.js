@@ -61,7 +61,7 @@ app.get('/weather', (req, res) => { //returning JSON, no html web page
 
         }
         
-        forecast(latitude, longtitude, (error2, {temp, location, percipation} = {}) => {
+        forecast(latitude, longtitude, (error2, {temp, location, percipation, summary, dayLow, dayHigh} = {}) => {
             if (error2) {
                 return res.send({error: error2})           //no valid address     
             }
@@ -72,7 +72,9 @@ app.get('/weather', (req, res) => { //returning JSON, no html web page
                 temp,
                 location,
                 percipation,
-                
+                summary,
+                dayLow,
+                dayHigh
             })
 
         })

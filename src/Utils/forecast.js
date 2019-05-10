@@ -19,7 +19,9 @@ const forecast = (latitude,longtitude, callback) =>
                 summary: body.daily.data[0].summary,
                 temp: body.currently.temperature,
                 location: body.timezone,
-                percipation: body.currently.precipProbability
+                percipation: body.currently.precipProbability,
+                dayLow: body.daily.data.apparentTemperatureLow,
+                dayHigh: body.daily.data.apparentTemperatureHigh
             })
         }
     })
